@@ -1,0 +1,32 @@
+{
+  "author": "Ken Snyder (Giovanni Collazo)",
+  "name": "brunch-with-ember-reloaded",
+  "description": "Forked from brunch-with-ember-reloaded but modified to use Javascript and LESS instead of CoffeeScript and Stylus",
+  "version": "0.0.4",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
+  "scripts": {
+    "start": "brunch watch --server"
+  },
+  "dependencies": {
+    "javascript-brunch": ">= 1.0 < 1.6",
+
+    "css-brunch": ">= 1.0 < 1.6",
+    "less-brunch": ">= 1.0 < 1.6",
+
+    "uglify-js-brunch": ">= 1.0 < 1.6",
+    "clean-css-brunch": ">= 1.0 < 1.6",
+
+    "auto-reload-brunch": ">= 1.0 < 1.6",
+    "ember-handlebars-brunch": "git+ssh://git@github.com:bartsqueezy/ember-handlebars-brunch.git"
+  },
+  "devDependencies": {
+    "karma": "0.8.1"
+  }
+}

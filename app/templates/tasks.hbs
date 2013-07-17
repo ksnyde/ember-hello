@@ -1,0 +1,91 @@
+<h2>Welcome to Ember.js</h2>
+{{#linkTo "hi"}}HI{{/linkTo}}
+
+<h2>Activity Stream - Blue Herring</h2>
+
+
+{{#each controller}}
+<ul class="activities" id="activity-{{unbound id}}"> 
+  <li class="activity single-day exercise">
+    <span class="time-container">
+      <span class="time">{{time start_time}}</span>
+    </span>
+    <span class="holder">
+      <span {{bindAttr class=":icon icon"}}></span>
+    </span>
+    <span class="information">
+      <span class="title">
+        <a href="">{{name}}</a>
+      </span>
+      <span class="details">{{description}}</span>
+    </span>
+    <a href="#" class="arrow"><div class="icon" {{action toggleDetails id}}></div></a>
+    <div id="activity-details-{{unbound id}}" class="more hide" style="display: none;">
+      <div class="textArea">
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <th style="width:120px">Marker</th>
+              <th><span class="right">Measurement</span></th>
+              <th style="min-width:100px"></th>
+            </tr>
+            {{#if end_time }}
+            <tr>
+              <td>Timeframe</td>
+              <td colspan=2>
+                {{time start_time}} <em>to</em> 
+                {{time end_time}}
+                {{#if duration}}
+                  &nbsp;&nbsp;<span class="de-emphasize">({{duration}} min)</span>
+                {{/if}}
+              <td></td>
+            </tr>
+            {{else}}
+            <tr>
+              <td>When</td>
+              <td>
+                {{time start_time}}
+              </td>
+              <td></td>
+            </tr>
+            
+            {{/if}}
+            {{#if distance}}
+            <tr>
+              <td>Distance</td>
+              <td>
+                <span class="right">
+                  <span>{{distance}}</span>
+                  <span class="uom">mi</span>
+                </span>
+              </td>
+              <td><span></span></td>
+            </tr>
+            {{/if}}
+           {{#if pace}}
+            <tr>
+              <td>Average Pace</td>
+              <td>
+                <span class="right">
+                  <span>{{pace}}</span> 
+                  <span class="uom">min/mi</span>
+                </span>
+              </td>
+              <td> &nbsp;</td>
+            </tr>
+           {{/if}}
+          </tbody></table>
+        <br>
+        <span class="heading notes">Your notes:</span> <br>
+        <span class="field ">
+          {{#if user_comment}}
+            <span>{{user_comment}}</span>                
+          {{else}}
+            <span class="de-emphasize">(nothing noted)</span>
+          {{/if}}
+        </span>
+      </div>
+    </div>
+  </li>
+</ul>
+{{/each}}
