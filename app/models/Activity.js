@@ -4,8 +4,6 @@ App = require("app");
 
 module.exports = App.Activity = DS.Model.extend({
 	
-	init: function() { console.log("Activity Model instantiated!"); },
-
     action: DS.attr("string"),
     name: DS.attr("string"),
     description: DS.attr("string"),

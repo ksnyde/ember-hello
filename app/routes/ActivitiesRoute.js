@@ -7,6 +7,7 @@ module.exports = App.ActivitiesRoute = Ember.Route.extend({
 
 	init: function() {
 		console.log("ActivitesRoute instantiated!");
+		console.log(App);
 	},
 
 	model: function() {

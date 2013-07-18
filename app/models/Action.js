@@ -1,4 +1,5 @@
 App = require("app");
+
 module.exports = App.Action = DS.Model.extend({
   type: DS.attr("string"),
   sub_type: DS.attr("string")

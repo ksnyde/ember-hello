@@ -1,5 +1,5 @@
-// Version: v1.0.0-rc.6-138-gea4f0d1
-// Last commit: ea4f0d1 (2013-07-16 15:21:39 -0700)
+// Version: v1.0.0-rc.6-139-g67e3c67
+// Last commit: 67e3c67 (2013-07-17 14:53:06 -0400)
 
 
 (function() {
@@ -156,8 +156,8 @@ Ember.deprecateFunc = function(message, func) {
 
 })();
 
-// Version: v1.0.0-rc.6-138-gea4f0d1
-// Last commit: ea4f0d1 (2013-07-16 15:21:39 -0700)
+// Version: v1.0.0-rc.6-139-g67e3c67
+// Last commit: 67e3c67 (2013-07-17 14:53:06 -0400)
 
 
 (function() {
@@ -20271,7 +20271,7 @@ Ember.Handlebars.registerHelper('helperMissing', function(path, options) {
 
   ```javascript
   Ember.Handlebars.registerBoundHelper('concatenate', function() {
-    var values = arguments[arguments.length - 1];
+    var values = Array.prototype.slice.call(arguments, 0, -1);
     return values.join('||');
   });
   ```
